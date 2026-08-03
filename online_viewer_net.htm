@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Glassmorphism CV - MD Jahidul Islam</title>
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Times New Roman', Times, serif, 'Segoe UI', Arial;
+            background: #090d16;
+            color: #f8fafc;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            padding: 20px 10px;
+        }
+
+        .cv-wrapper {
+            padding: 24px;
+            width: 100%;
+            max-width: 950px;
+            background: #0b1120;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
+        /* Header Container */
+        .header-card {
+            background: #0f172a;
+            border: 1px solid #38bdf8;
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.15);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+        }
+
+        .profile-frame {
+            width: 130px;
+            height: 150px;
+            border-radius: 12px;
+            border: 2px solid #38bdf8;
+            overflow: hidden;
+            background: #1e293b;
+            box-shadow: 0 0 12px rgba(56, 189, 248, 0.4);
+            flex-shrink: 0;
+        }
+
+        .profile-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .header-right {
+            flex-grow: 1;
+        }
+
+        .name-title {
+            font-size: 26pt;
+            font-weight: bold;
+            margin: 0;
+            color: #ffffff;
+            letter-spacing: 1px;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        }
+
+        .role-badge {
+            display: inline-block;
+            margin-top: 8px;
+            margin-bottom: 14px;
+            padding: 6px 16px;
+            background: linear-gradient(90deg, #6366f1, #a855f7);
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 9.5pt;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
+            letter-spacing: 0.5px;
+        }
+
+        .contact-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            font-size: 9pt;
+            color: #cbd5e1;
+        }
+
+        .contact-pill {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 6px 12px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* 2-Column Main Layout */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 16px;
+            width: 100%;
+        }
+
+        /* Glass Cards */
+        .glass-card {
+            background: #0f172a;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 16px;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .card-title {
+            font-size: 11pt;
+            font-weight: bold;
+            color: #38bdf8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 0;
+            margin-bottom: 12px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid rgba(56, 189, 248, 0.4);
+        }
+
+        /* Custom Bullet List */
+        .custom-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 9.5pt;
+        }
+
+        .custom-list li {
+            position: relative;
+            padding-left: 16px;
+            margin-bottom: 10px;
+            color: #e2e8f0;
+            line-height: 1.4;
+        }
+
+        .custom-list li::before {
+            content: "♦";
+            position: absolute;
+            left: 0;
+            color: #818cf8;
+            font-size: 8pt;
+        }
+
+        /* Badges */
+        .badge-3d {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid #38bdf8;
+            color: #f8fafc;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 8.5pt;
+            margin: 3px 2px;
+        }
+
+        .p-desc {
+            font-size: 9.5pt;
+            line-height: 1.5;
+            color: #cbd5e1;
+            margin: 0 0 12px 0;
+        }
+
+        /* Timeline / Experience Cards */
+        .timeline-item {
+            background: #090d16;
+            border-left: 3px solid #a855f7;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 12px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 12px;
+        }
+
+        .job-title {
+            font-size: 10.5pt;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        .company-name {
+            font-size: 8.5pt;
+            color: #38bdf8;
+            margin-top: 3px;
+        }
+
+        .duration-tag {
+            display: inline-block;
+            font-size: 8pt;
+            color: #f43f5e;
+            background: rgba(244, 63, 94, 0.1);
+            padding: 3px 8px;
+            border-radius: 4px;
+            margin-top: 8px;
+            border: 1px solid rgba(244, 63, 94, 0.4);
+            font-weight: bold;
+        }
+
+        /* Data Tables */
+        .table-3d {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 9pt;
+        }
+
+        .table-3d td {
+            padding: 6px 0;
+            color: #cbd5e1;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+        }
+
+        .table-3d td.lbl {
+            font-weight: bold;
+            color: #38bdf8;
+            width: 45%;
+        }
+
+        /* Mobile Responsive Layout */
+        @media (max-width: 768px) {
+            .main-layout {
+                grid-template-columns: 1fr;
+            }
+            .header-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            .contact-grid {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="cv-wrapper">
+    
+    <!-- Header Area -->
+    <div class="header-card">
+        <div class="profile-frame">
+            <img src="https://i.postimg.cc/VkmyHhv8/ME.png" alt="MD Jahidul Islam">
+        </div>
+        <div class="header-right">
+            <h1 class="name-title">MD JAHIDUL ISLAM</h1>
+            <div class="role-badge">SALES & CUSTOMER SERVICE SPECIALIST</div>
+            
+            <div class="contact-grid">
+                <span class="contact-pill">📞 +974 55219521</span>
+                <span class="contact-pill">✉️ mdjahidulislamforhad770@gmail.com</span>
+                <span class="contact-pill">📍 Doha – Qatar</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content Grid -->
+    <div class="main-layout">
+        
+        <!-- Left Column -->
+        <div class="left-column">
+            
+            <!-- Key Expertise -->
+            <div class="glass-card">
+                <h3 class="card-title">KEY EXPERTISE</h3>
+                <ul class="custom-list">
+                    <li>Customer Care Services</li>
+                    <li>Timekeeper & Storekeeper</li>
+                    <li>Sales & Negotiation</li>
+                    <li>Organized Dedication</li>
+                    <li>Work Pressure Handling</li>
+                    <li>Adaptable to Environment</li>
+                </ul>
+            </div>
+
+            <!-- Languages -->
+            <div class="glass-card">
+                <h3 class="card-title">LANGUAGES</h3>
+                <div>
+                    <span class="badge-3d">Bengali (Native)</span>
+                    <span class="badge-3d">English (Fluent)</span>
+                    <span class="badge-3d">Hindi (Speaking)</span>
+                    <span class="badge-3d">Urdu (Speaking)</span>
+                    <span class="badge-3d">Arabic (Understant)</span>
+                </div>
+            </div>
+
+            <!-- Passport Info -->
+            <div class="glass-card">
+                <h3 class="card-title">PASSPORT INFO</h3>
+                <table class="table-3d">
+                    <tr><td class="lbl">Passport No:</td><td>A13192664</td></tr>
+                    <tr><td class="lbl">Issue Date:</td><td>16/11/2023</td></tr>
+                    <tr><td class="lbl">Expiry Date:</td><td>15/11/2033</td></tr>
+                    <tr><td class="lbl">Country:</td><td>Bangladesh</td></tr>
+                </table>
+            </div>
+
+            <!-- Personal Details -->
+            <div class="glass-card">
+                <h3 class="card-title">PERSONAL DETAILS</h3>
+                <table class="table-3d">
+                    <tr><td class="lbl">Father's Name:</td><td>Yasin Arafat</td></tr>
+                    <tr><td class="lbl">Date of Birth:</td><td>01/03/2005</td></tr>
+                    <tr><td class="lbl">Gender:</td><td>Male</td></tr>
+                    <tr><td class="lbl">Marital Status:</td><td>Unmarried</td></tr>
+                    <tr><td class="lbl">Religion:</td><td>Muslim</td></tr>
+                    <tr><td class="lbl">QID No:</td><td>30505004343</td></tr>
+                    <tr><td class="lbl">Visa Status:</td><td>Transferable</td></tr>
+                </table>
+            </div>
+
+        </div>
+
+        <!-- Right Column -->
+        <div class="right-column">
+            
+            <!-- Objective & Background -->
+            <div class="glass-card">
+                <h3 class="card-title">OBJECTIVE</h3>
+                <p class="p-desc">
+                    To perform a challenging job that will utilize my knowledge, skills, energy and optimistic attitude/approach in a result oriented & rewards driven career to enhance performance of the organization with the help of my powerful dedication and energetic enthusiasm.
+                </p>
+
+                <h3 class="card-title" style="margin-top: 15px;">BACKGROUND</h3>
+                <p class="p-desc">
+                    Supervisor, Customer Care services and Office Management Skills with proficiency in Microsoft Office package. Support the various functions to ensure the availability, security, traceability, and retrieval of indexed documents and records by managing and operating a document control system in accordance with the requirements of ISO 9001 and experience in Middle East & Bangladesh.
+                </p>
+            </div>
+
+            <!-- Work Experience -->
+            <div class="glass-card">
+                <h3 class="card-title">WORK EXPERIENCE</h3>
+                
+                <div class="timeline-item">
+                    <div class="job-title">Research and Data Collector Supervisor</div>
+                    <div class="company-name">Social & Economic Survey Research Institute (SESRI) in Qatar University</div>
+                    <span class="duration-tag">🎓 November 2024 - Present (Evening Shift)</span>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="job-title">Customer Care Services Specialist</div>
+                    <div class="company-name">Royal Trading Services W.L.L — Doha, Qatar</div>
+                    <span class="duration-tag">🎓 December 2024</span>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="job-title">Computer Operator & Data Entry</div>
+                    <div class="company-name">Unilever Bangladesh Ltd. — Mirpur, Dhaka</div>
+                    <span class="duration-tag">⏱️ 2 Years Experience (Dec 2022 - Oct 2024)</span>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="job-title">Computer Operator & Data Entry</div>
+                    <div class="company-name">Almas Super-shop — Dhaka, Bangladesh</div>
+                    <span class="duration-tag">⏱️ 3 Months Experience (Mar 2023 - Jul 2023)</span>
+                </div>
+            </div>
+
+            <!-- Academic Qualification -->
+            <div class="glass-card">
+                <h3 class="card-title">ACADEMIC QUALIFICATION</h3>
+                
+                <div class="timeline-item" style="border-left-color: #38bdf8;">
+                    <div class="job-title">Higher Secondary Certificate (HSC)</div>
+                    <div class="company-name">Nather Petua Degree College</div>
+                    <div style="font-size: 8.5pt; color: #a855f7; margin-top: 4px; font-weight: bold;">Group: Business Studies | Passing Year: 2024</div>
+                </div>
+
+                <div class="timeline-item" style="border-left-color: #38bdf8;">
+                    <div class="job-title">Secondary School Certificate (SSC)</div>
+                    <div class="company-name">Lakshanpur Nurul Hoq High School — Monohorganj, Cumilla</div>
+                    <div style="font-size: 8.5pt; color: #a855f7; margin-top: 4px; font-weight: bold;">Group: Business Studies | Passing Year: 2022</div>
+                </div>
+            </div>
+
+            <!-- Training Qualification -->
+            <div class="glass-card">
+                <h3 class="card-title">TRAINING & CERTIFICATION</h3>
+                <div class="timeline-item" style="border-left-color: #f43f5e;">
+                    <div class="job-title">National Skill Standard Basic Course Certificate</div>
+                    <div class="company-name">Digital Information Technology (1000029)</div>
+                    <div style="font-size: 8.5pt; color: #cbd5e1; margin-top: 4px;">Duration: 6 Months</div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
