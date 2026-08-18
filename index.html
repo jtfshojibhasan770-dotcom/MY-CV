@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Arachne Clock Access & Glassmorphic CV</title>
+  <title>my cv</title>
   
   <!-- Google Fonts import -->
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -45,7 +45,7 @@
       100% { background-position: 0% 50%; }
     }
 
-    /* 🕷️ 1. ARACHNE CLOCK STYLES (Fixed Center & Size) */
+    /* 🕷️ 1. ARACHNE CLOCK STYLES (Enlarged for Mobile) */
     .clock-section {
       display: flex;
       flex-direction: column;
@@ -57,12 +57,12 @@
 
     .arachne-clock-container {
       position: relative;
-      width: 240px;
-      height: 240px;
+      width: 310px;
+      height: 310px;
       border-radius: 50%;
       background: radial-gradient(circle, #0e1118 0%, #030508 100%);
-      border: 1px solid rgba(0, 242, 254, 0.4);
-      box-shadow: 0 0 35px rgba(0, 242, 254, 0.2), inset 0 0 20px rgba(0,0,0,0.8);
+      border: 1.5px solid rgba(0, 242, 254, 0.4);
+      box-shadow: 0 0 45px rgba(0, 242, 254, 0.25), inset 0 0 25px rgba(0,0,0,0.8);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -74,25 +74,25 @@
 
     .arachne-clock-container:hover {
       transform: scale(1.03);
-      box-shadow: 0 0 50px rgba(0, 242, 254, 0.5);
+      box-shadow: 0 0 55px rgba(0, 242, 254, 0.5);
     }
 
     .clock-brand {
       position: absolute;
-      top: 18px;
+      top: 22px;
       font-family: 'Cinzel', serif;
-      font-size: 10px;
+      font-size: 12px;
       font-weight: 700;
-      letter-spacing: 3px;
+      letter-spacing: 3.5px;
       color: #00f2fe;
       pointer-events: none;
     }
 
     .clock-subbrand {
       position: absolute;
-      top: 32px;
-      font-size: 5px;
-      letter-spacing: 1px;
+      top: 39px;
+      font-size: 6.5px;
+      letter-spacing: 1.5px;
       color: #38bdf8;
       pointer-events: none;
     }
@@ -110,17 +110,17 @@
 
     .clock-dial {
       position: relative;
-      width: 150px;
-      height: 150px;
+      width: 200px;
+      height: 200px;
       border-radius: 50%;
-      margin-top: 12px;
+      margin-top: 15px;
       pointer-events: none;
     }
 
     .number {
       position: absolute;
       font-family: 'Cinzel', serif;
-      font-size: 9.5px;
+      font-size: 12px;
       font-weight: 600;
       color: #00f2fe;
       transform: translate(-50%, -50%);
@@ -148,16 +148,16 @@
       border-radius: 4px;
     }
 
-    .hour-hand { width: 2.5px; height: 35px; }
-    .minute-hand { width: 1.8px; height: 50px; }
-    .second-hand { width: 1px; height: 58px; background: #ff4d6d; }
+    .hour-hand { width: 3px; height: 48px; }
+    .minute-hand { width: 2.2px; height: 68px; }
+    .second-hand { width: 1.2px; height: 78px; background: #ff4d6d; }
 
     .center-cap {
       position: absolute;
       top: 50%;
       left: 50%;
-      width: 7px;
-      height: 7px;
+      width: 9px;
+      height: 9px;
       background: #00f2fe;
       border: 2px solid #000;
       border-radius: 50%;
@@ -166,23 +166,23 @@
 
     .digital-time {
       position: absolute;
-      bottom: 20px;
+      bottom: 24px;
       font-family: 'Cinzel', serif;
-      font-size: 9.5px;
+      font-size: 12px;
       color: #00f2fe;
       pointer-events: none;
     }
 
     .click-hint {
       position: absolute;
-      bottom: 8px;
-      font-size: 8px;
+      bottom: 10px;
+      font-size: 10px;
       color: #38bdf8;
       font-weight: 600;
       pointer-events: none;
     }
 
-    /* 💡 2. MODAL & ANIMATED LAMP LOGIN (Locked Center Position) */
+    /* 💡 2. MODAL & ANIMATED LAMP LOGIN (Enlarged for Mobile) */
     .modal-overlay {
       position: fixed;
       top: 0;
@@ -196,7 +196,7 @@
       align-items: center;
       z-index: 999;
       display: none;
-      padding: 10px;
+      padding: 15px;
     }
 
     .modal-overlay.show {
@@ -207,9 +207,9 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 12px;
+      gap: 15px;
       width: 100%;
-      max-width: 280px;
+      max-width: 330px;
       box-sizing: border-box;
     }
 
@@ -221,8 +221,8 @@
     }
 
     .lamp-shade {
-      width: 70px;
-      height: 40px;
+      width: 85px;
+      height: 48px;
       background: #8f9091c0;
       clip-path: polygon(25% 0%, 75% 0%, 100% 100%, 0% 100%);
       border-radius: 4px;
@@ -240,29 +240,29 @@
 
     .cord-line {
       width: 2px;
-      height: 30px;
+      height: 35px;
       background: #8b949e;
     }
 
     .cord-handle {
-      width: 10px;
-      height: 10px;
+      width: 12px;
+      height: 12px;
       background: #00f2fe;
       border-radius: 50%;
-      box-shadow: 0 0 6px #00f2fe;
+      box-shadow: 0 0 8px #00f2fe;
     }
 
     .pull-hint {
-      font-size: 8.5px;
+      font-size: 10px;
       font-weight: 700;
       letter-spacing: 1px;
       color: #00f2fe;
-      margin-top: 6px;
+      margin-top: 8px;
     }
 
     .lamp-wrapper.active .lamp-shade {
       background: #00f2fe;
-      box-shadow: 0 0 30px #00f2fe;
+      box-shadow: 0 0 35px #00f2fe;
       animation: dimPulse 2s infinite alternate ease-in-out;
     }
 
@@ -274,8 +274,8 @@
     .login-card {
       background: #070c18;
       border: 1px solid rgba(0, 242, 254, 0.3);
-      border-radius: 14px;
-      padding: 15px;
+      border-radius: 16px;
+      padding: 20px;
       width: 100%;
       text-align: center;
       position: relative;
@@ -294,60 +294,61 @@
 
     .close-modal {
       position: absolute;
-      top: 10px;
-      right: 12px;
+      top: 12px;
+      right: 15px;
       color: #8b949e;
       cursor: pointer;
+      font-size: 14px;
     }
 
     .panda-face {
-      width: 50px;
-      height: 50px;
-      margin: 0 auto 6px auto;
+      width: 60px;
+      height: 60px;
+      margin: 0 auto 8px auto;
     }
 
     .login-card h3 {
-      font-size: 15px;
+      font-size: 17px;
       color: hsl(172, 89%, 65%);
     }
 
     .login-card p.sub {
-      font-size: 10px;
+      font-size: 11.5px;
       color: #7be8f0;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
     .input-box {
       text-align: left;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
       position: relative;
     }
 
     .input-box label {
       display: block;
-      font-size: 9.5px;
+      font-size: 11px;
       color: #8b949e;
-      margin-bottom: 2px;
+      margin-bottom: 3px;
     }
 
     .input-box input {
       width: 100%;
-      padding: 7px 28px 7px 8px;
+      padding: 9px 32px 9px 10px;
       background: #0d1117;
       border: 1px solid #30363d;
       border-radius: 6px;
       color: #fff;
-      font-size: 11px;
+      font-size: 13px;
       outline: none;
     }
 
     .toggle-eye {
       position: absolute;
-      right: 8px;
-      top: 50%;
+      right: 10px;
+      top: 57px;
       color: #8b949e;
       cursor: pointer;
-      font-size: 11px;
+      font-size: 13px;
       height: 20px;
       display: flex;
       justify-content: center;
@@ -356,21 +357,21 @@
 
     .btn-signin {
       width: 100%;
-      padding: 8px;
+      padding: 10px;
       background: linear-gradient(135deg, #00f2fe, #4facfe);
       border: none;
       border-radius: 6px;
       color: #030712;
       font-weight: 700;
       cursor: pointer;
-      margin-top: 4px;
-      font-size: 11px;
+      margin-top: 6px;
+      font-size: 13px;
     }
 
     .error-msg {
       color: #ff4d6d;
-      font-size: 9.5px;
-      margin-top: 6px;
+      font-size: 11px;
+      margin-top: 8px;
       display: none;
     }
 
