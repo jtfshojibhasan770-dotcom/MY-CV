@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>my cv</title>
+  <title>MY CURRICULUM VITAE</title>
   
   <!-- Google Fonts import -->
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -22,12 +22,12 @@
       width: 100%;
       height: 100vh;
       height: 100dvh;
-      overflow: hidden; /* স্ক্রিন লক ও ওপর-নিচে স্ক্রোল রোধ করার জন্য */
+      overflow: hidden;
       position: fixed;
     }
 
     body {
-      background: linear-gradient(-45deg, #030712, #0d1527, #001220, #090014);
+      background: linear-gradient(-45deg, #121003d2, #070f20d8, #012541, #0b0116);
       background-size: 400% 400%;
       animation: bgGradient 12s ease infinite;
       color: #f8fafc;
@@ -45,7 +45,7 @@
       100% { background-position: 0% 50%; }
     }
 
-    /* 🕷️ 1. ARACHNE CLOCK STYLES (Enlarged for Mobile) */
+    /* 🕷️ 1. ARACHNE CLOCK STYLES */
     .clock-section {
       display: flex;
       flex-direction: column;
@@ -182,7 +182,7 @@
       pointer-events: none;
     }
 
-    /* 💡 2. MODAL & ANIMATED LAMP LOGIN (Enlarged for Mobile) */
+    /* 💡 2. MODAL & ANIMATED LAMP LOGIN */
     .modal-overlay {
       position: fixed;
       top: 0;
@@ -247,22 +247,22 @@
     .cord-handle {
       width: 12px;
       height: 12px;
-      background: #00f2fe;
+      background: #f8d997;
       border-radius: 50%;
-      box-shadow: 0 0 8px #00f2fe;
+      box-shadow: 0 0 8px #fcefa8;
     }
 
     .pull-hint {
       font-size: 10px;
       font-weight: 700;
       letter-spacing: 1px;
-      color: #00f2fe;
+      color: #f8ecb9a9;
       margin-top: 8px;
     }
 
     .lamp-wrapper.active .lamp-shade {
-      background: #00f2fe;
-      box-shadow: 0 0 35px #00f2fe;
+      background: #f1c58a;
+      box-shadow: 0 0 35px #f1d69a;
       animation: dimPulse 2s infinite alternate ease-in-out;
     }
 
@@ -320,8 +320,9 @@
 
     .input-box {
       text-align: left;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
       position: relative;
+      width: 100%;
     }
 
     .input-box label {
@@ -333,26 +334,28 @@
 
     .input-box input {
       width: 100%;
-      padding: 9px 32px 9px 10px;
+      padding: 10px 38px 10px 12px;
       background: #0d1117;
       border: 1px solid #30363d;
       border-radius: 6px;
       color: #fff;
       font-size: 13px;
       outline: none;
+      box-sizing: border-box;
     }
 
     .toggle-eye {
       position: absolute;
-      right: 10px;
-      top: 57px;
+      right: 14px;
+      top: 33px;
       color: #8b949e;
       cursor: pointer;
-      font-size: 13px;
-      height: 20px;
+      font-size: 14px;
       display: flex;
       justify-content: center;
       align-items: center;
+      width: 24px;
+      height: 24px;
     }
 
     .btn-signin {
@@ -375,7 +378,7 @@
       display: none;
     }
 
-    /* 🧊 3. CV WRAPPER STYLES (Scrollable after unlock) */
+    /* 🧊 3. CV WRAPPER STYLES */
     .cv-wrapper {
       display: none;
       width: 100%;
@@ -451,6 +454,7 @@
     .contact-grid {
       display: flex;
       flex-direction: column;
+      align-items: center; /* কন্টাক্ট পিলগুলোকে মাঝখানে রাখার জন্য */
       gap: 8px;
       width: 100%;
       font-size: 8.5pt;
@@ -459,11 +463,15 @@
     .contact-pill {
       background: rgba(0, 242, 254, 0.08);
       border: 1px solid rgba(0, 242, 254, 0.4);
-      padding: 8px;
+      padding: 8px 16px;
       border-radius: 20px;
       color: #e2e8f0;
       text-decoration: none;
       text-align: center;
+      width: fit-content; /* বর্ডার শুধু লেখার সাইজ অনুযায়ী ছোট থাকবে */
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
     }
 
     .glass-card {
@@ -1007,7 +1015,7 @@
       }
     };
 
-    const encodedUser = "Zm9yaGFk";
+    const encodedUser = "Rm9yaGFk";
     const encodedPass = "ODU3MA==";
 
     function handleLogin() {
